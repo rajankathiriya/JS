@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>error handling</title>
+</head>
+
+<body>
+    <input id="demo" type="text">
+    <button type="button" onclick="myFunction()">Test Input</button>
+    <p id="num"></p>
+    <script>
+        function myFunction() {
+            const message = document.getElementById("num");
+            message.innerHTML = "";
+            let x = document.getElementById("demo").value;
+            try {
+                if (x.trim() == "") throw "is empty";
+                if (isNaN(x)) throw "is not a number";
+                //if(parseFloat(x)) throw "not error";
+                x = Number(x);
+                if (parseFloat==x) throw "not error";
+                
+
+            } catch (err) {
+                message.innerHTML = "Input " + err;
+            }
+
+        }
+    </script>
+</body>
+
+</html>

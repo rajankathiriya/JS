@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>splice</title>
+</head>
+<body>
+    <input type="text" id="text1" value="">
+    <button onclick="myfun()">save</button>
+    <div id="text2"></div>
+    <script>
+         let fruits = ["Banana", "Orange","kivi", "Apple", "Mango"];
+         function myfun(){
+            let data = document.getElementById("text1").value;
+            let ind = fruits.indexOf(data);
+             fruits.splice(ind,2);
+             document.getElementById("text2").innerHTML = fruits;
+         }
+       
+       
+    </script>
+</body>
+</html>

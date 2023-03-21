@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>all array mix</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        let numbers = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 9]
+        ];
+        //  1   let mydata2 =[];
+        //     let mydata3 = mydata.concat(mydata2);
+        //     mydata3.foreach(value());
+        //     document.getElementById("demo").innerHTML = mydata3;
+        //    console.log(mydata3);
+
+        // 2 let  mydata2= [].concat.apply([], mydata);
+        // document.getElementById("demo").innerHTML = mydata2;
+        // console.log(mydata2);
+        let txt = "";
+        numbers.forEach(myFunction);
+        //document.getElementById("demo").innerHTML = txt;
+        function myFunction(value, index, array) {
+            txt += value + "<br>";
+            let mydata2 = txt.concat(numbers);
+            document.getElementById("demo").innerHTML = mydata2;
+        }
+       // console.log(mydata2);
+    </script>
+</body>
+
+</html>

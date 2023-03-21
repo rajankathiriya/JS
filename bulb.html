@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bulb program</title>
+</head>
+
+<body>
+    <div id="bulb"></div>
+  
+    <button onclick="document.getElementById('myImage').src='/bulbon.jpeg'">Turn on the light</button>
+
+    <img id="myImage" src="bulboff.png" style="width:100px">
+
+    <button onclick="document.getElementById('myImage').src='/bulboff.png'">Turn off the light</button>
+<script>
+    function myfunon()
+    {
+        document.getElementById("bulb").style.backgroundImage="url(/bulbon.jpge)";
+    }
+    function myfunoff()
+    {
+        document.getElementById("bulb").style.backgroundImage="url('/bulboff.png')";
+    }
+</script>
+<button onclick="myfunon()">Turn on the light</button>
+<img id="bulb" src="/bulboff.png" style="width:200px">
+<button onclick="myfunoff()">Turn off the light</button>
+
+</body>
+
+</html>

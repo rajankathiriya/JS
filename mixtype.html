@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mix data types</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        let mydata = [
+            [1, 2, 3], "{2,3,4,5}", 4, 5, 7, "test", true, false, [3, 4, 5]
+        ];
+        let mydata2 = [];
+        let arry = 0;
+        let str = 0;
+        let num = 0;
+        let boll = 0;
+        mydata.forEach(value());
+       
+
+
+        // // document.getElementById("demo").innerHTML = text.typeof();
+        // {
+        //     if (!mydata2.has(mydata[i].typeof())) {
+        //         mydata2.set(mydata[i].typeof(), 1)
+        //     } else {
+        //         let d = mydata2.get(mydata[i].typeof());
+        //         mydata2.set(mydata[i].typeof(), d + 1)
+        //     }
+        // }
+        
+
+        console.log(mydata);
+    </script>
+</body>
+
+</html>

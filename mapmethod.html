@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <!-- <div id="result"></div> 
+    <input type="button" value="show" onclick="myfun()"></input> -->
+    <div id="result"></div>
+    <input type="button" value="show" onclick="myfun()"></input>
+    <script>
+      //  function myfun(){
+      //   let myarray = ["c#","java","react","angularjs","sql","node.js"];
+      //    let myfunction = myarray.map(function(value)
+      //    {
+      //       return `<div>${value}</div>`;
+      //    })
+      //    document.getElementById("result").innerHTML = myfunction.join("  ");
+      //  }
+       
+ 
+        function myfun() {
+            let myarray = ["A Better India: A Better World", " Passage to India", "A Revenue Stamp", "The Guide",
+                "Midnight’s Children"
+            ];
+            let myfunction = myarray.map(function (value) {
+                return `<li>${value}</li>`;
+            })
+            document.getElementById("result").innerHTML = myfunction.join("  ");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body id="incre">
+    <div id="dic">display to content.</div>
+    <script>
+         let a = 3;
+        document.getElementById("dic").innerHTML = a;
+        function myidecre() {
+            document.getElementById("incre").style.backgroundImage = "url(/img3.jpg)";
+            document.getElementById("incre").style.backgroundRepeat = "no-repeat";
+            document.getElementById("incre").style.backgroundSize = "cover";
+            document.getElementById("dic").style.color = "white";
+            document.getElementById("dic").style.fontSize = "50px"
+            document.getElementById("dic").innerHTML = a++;
+            document.getElementById("btn").style.backgroundColor="pink";
+            document.getElementById("btn").style.borderRadius="20px"
+        }
+
+        function mydec() {
+            document.getElementById("incre").style.backgroundImage = "url(/img.jpg)";
+            document.getElementById("incre").style.backgroundRepeat = "no-repeat";
+            document.getElementById("incre").style.backgroundSize = "cover";
+            document.getElementById("dic").style.color = "white";
+            document.getElementById("dic").style.fontSize = "50px"
+            document.getElementById("dic").innerHTML = a--;
+            document.getElementById("btn2").style.backgroundColor="pink";
+            document.getElementById("btn2").style.borderRadius="20px";
+
+        }
+    </script>
+    <button id="btn" onclick="myidecre()">Increments</button>
+    <button id="btn2" onclick="mydec()">Decrements</button>
+</body>
+
+</html>

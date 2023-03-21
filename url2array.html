@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+        tr:hover {background-color: #39aaa4;}
+
+        img {
+            width: 80px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<table id="tabledic"></table>
+<body>
+    <script>
+        fetch("https://jsonplaceholder.typicode.com/photos")
+        .then(function(value)
+        {
+            return value.json()
+        })
+        .then(function(value){
+             let mydata = value.map(function(value){
+                return `<tr><td>${value.albumId}</td><td>${value.id}</td><td>${value.title}</td><td><img src='${value.url}'</td><td><img src ='${value.thumbnailUrl}'</td></tr>`
+             })
+             document.getElementById("tabledic").innerHTML = mydata.join(" ");
+        })
+        
+            
+
+    </script>
+</body>
+</html>

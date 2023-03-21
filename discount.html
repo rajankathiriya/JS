@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="peri">
+    <script>
+    function per()
+    // {
+    //    let value = 20000;
+    //    if(value>0 && value<5000)
+    //    {
+    //     console.log("discount given rupees "+ value*3/100);
+    //    }
+    //    else if(value>=5000 && value<10000)
+    //    {
+    //     console.log("discount given rupees "+ value*5/100);
+    //    }
+    //    else if(value>=10000 && value<20000)
+    //    {
+    //     console.log("discount given rupees "+ value*10/100);
+    //    }
+    //    else if(value>=20000 && value<30000)
+    //    {
+    //     console.log("discount given rupees "+ value*15/100);
+    //    }
+    //    else
+    //    {
+    //         console.log("not given discount.")
+    //    }
+    // }
+    function per()
+    {
+       let value ;
+       document.getElementById("peri").innerHTML= value;
+       if(value>0 && value<5000)
+       {
+        document.getElementById("peri").innerHTML="discount given rupees "+ value*3/100;
+       }
+       else if(value>=5000 && value<10000)
+       {
+        document.getElementById("peri").innerHTML="discount given rupees "+ value*5/100;
+       }
+       else if(value>=10000 && value<20000)
+       {
+        document.getElementById("peri").innerHTML="discount given rupees "+ value*10/100;
+       }
+       else if(value>=20000 && value<30000)
+       {
+        document.getElementById("peri").innerHTML="discount given rupees "+ value*15/100;
+       }
+       else
+       {
+        document.getElementById("peri").innerHTML="not given discount.";
+       }
+    }
+</script>
+<button onclick="per()">click</button>
+</body>
+</html>

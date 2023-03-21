@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arrayobject</title>
+</head>
+
+<body>
+    <table id="result"></table>
+    <div id="myresult"></div>
+
+    <script>
+        let menuoffood = [
+            {
+                id: 1,
+                title: "buttermilk pancakes",
+                category: "breakfast",
+                price: 15.99,
+            },
+            {
+                id: 2,
+                title: "diner double",
+                category: "lunch",
+                price: 13.99,
+            },
+            {
+                id: 3,
+                title: "godzilla milkshake",
+                category: "shakes",
+                price: 6.99,
+            },
+            {
+                id: 4,
+                title: "country delight",
+                category: "breakfast",
+                price: 20.99,
+               
+            },
+            {
+                id: 5,
+                title: "egg attack",
+                category: "lunch",
+                price: 22.99,
+            },
+            {
+                id: 6,
+                title: "oreo dream",
+                category: "shakes",
+                price: 18.99,
+            },
+            {
+                id: 7,
+                title: "bacon overflow",
+                category: "breakfast",
+                price: 8.99,
+            },
+            {
+                id: 8,
+                title: "american classic",
+                category: "lunch",
+                price: 12.99,
+            },
+
+        ];
+        let myarraytable = menuoffood.map(function (value) {
+
+            return `<tr><td>${value.id}</td><td>${value.title}</td><td>${value.category}</td><td>${value.price}</td></tr>` 
+        })
+
+        document.getElementById("result").innerHTML = myarraytable .join(" ");
+
+
+
+        // let mydata = [4,6,8,9,22,34,];
+        // let myarray = mydata.find((value)=>{
+        //     return value *2;
+        // })
+        // document.getElementById("myresult").innerHTML=myarray.join("");
+        
+        
+    </script>
+</body>
+
+</html>

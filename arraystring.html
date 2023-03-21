@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<button onclick="myarratdata()">click</button>
+<div id="myarratdat"></div>
+<body>
+    <script>
+        
+        const  myitems = [{
+                id: 1,
+                name: 'Bertie Yates',
+                age: 29,
+                image: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-2_ipcjws.jpg',
+            },
+            {
+                id: 2,
+                name: 'Hester Hogan',
+                age: 32,
+                image: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1595959131/person-3_rxtqvi.jpg',
+            },
+            {
+                id: 3,
+                name: 'Larry Little',
+                age: 36,
+                image: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883423/person-4_t9nxjt.jpg',
+            },
+            {
+                id: 4,
+                name: 'Sean Walsh',
+                age: 34,
+                image: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883417/person-3_ipa0mj.jpg',
+            },
+            {
+                id: 5,
+                name: 'Lola Gardner',
+                age: 29,
+                image: 'https://res.cloudinary.com/diqqf3eq2/image/upload/v1586883334/person-1_rfzshl.jpg',
+            },
+        ];
+        
+        //function myarratdata() {
+            //let text = myitems.toString();
+            let text2 = myitems.map(function(value,index,array)
+            {
+                return(`<div>${value.id}${value.name}${value.age}<img src=${value.image}></div>`)
+            });
+            document.getElementById("myarratdat").innerHTML = text2.join(" ");  
+           
+                     
+        
+    </script>
+</body>
+
+</html>

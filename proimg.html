@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>show img</title>
+</head>
+<body id="dic2">
+    <div id="dic">display to content.</div>
+    <script>
+        function myimg() 
+        {
+            document.getElementById("dic").style.backgroundImage="url(/img.jpg)";
+            document.getElementById("dic").innerHTML="javascript..";
+            document.getElementById("dic").style.color="white";
+            // document.body.style.backgroundImage="url(/img2.jpg)";
+            document.getElementById("dic2").style.backgroundImage="url(/img3.jpg)";
+            document.getElementById("dic2").style.backgroundRepeat="no-repeat";
+             document.getElementById("dic2").style.backgroundSize="cover"
+        }
+    </script>
+    <button  onclick="myimg()">click me!!</button>
+</body>
+</html>

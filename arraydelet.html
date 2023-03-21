@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="mydata">
+    <button onclick="mysaveitem()">save</button> 
+    <button onclick="mydatadelet ()">delet</button>
+    <div id="myarratdat"></div>
+       <script>
+        let myitems = [];
+        function mysaveitem(){
+            let data = document.getElementById("mydata").value;
+            myitems.push(data);
+            myarratdata();
+            // mydatadelet();
+        }
+
+        function myarratdata() {
+            let data2 = myitems.map(function(value)
+            {
+                return(`<li>${value}</li>`)
+            }).join(" ");
+            document.getElementById("myarratdat").innerHTML = data2;  
+           
+                     
+        }
+        function mydatadelet(){
+              myitems.pop(function(value)
+              {
+                return
+              });
+              document.getElementById("myarratdat").innerHTML = myitems.shift("value"); 
+        }
+           
+    </script>
+</body>
+</html>

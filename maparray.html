@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>maps javascript</title>
+</head>
+<body>
+    <p id="demo"></p>
+    <script>
+        let mydata = " thIs Is tHe jaVscript code.";
+        let mydata2 = new Map([]);
+
+       for(let i=0;i<mydata.length;i++)
+       {
+        if(!mydata2.has(mydata[i].toLowerCase()))
+        {
+            mydata2.set(mydata[i].toLowerCase(),1)
+        }
+        else 
+        {
+           let d = mydata2.get(mydata[i].toLowerCase());
+           mydata2.set(mydata[i].toLowerCase(),d+1)
+        }
+        }
+        console.log( mydata2);
+    </script>
+</body>
+</html>

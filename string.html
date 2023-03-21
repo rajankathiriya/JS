@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <button id="show" onclick="myshowitem()">read</button> -->
+    <p id="demo"></p>
+    <script>
+        let mydata =
+            "JavaScript and Java are completely different languages, both in concept and design.JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997."
+        let mytext = mydata.slice(0, 66);
+        document.getElementById("demo").innerHTML = mytext;
+        
+        function myshowitem() {
+            let mydata =
+            "JavaScript and Java are completely different languages, both in concept and design.JavaScript was invented by Brendan Eich in 1995, and became an ECMA standard in 1997."  
+            let mytext = mydata.slice();
+            document.getElementById("demo").innerHTML = mytext;
+        }
+    </script>
+     <button id="show" onclick="myshowitem()">read</button>
+</body>
+</html>

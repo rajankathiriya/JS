@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="table1"></table>
+    <div id="result"></div>
+    <script>
+
+        let map = new Map();
+       fetch("https://jsonplaceholder.typicode.com/comments").then(function(value)
+        {
+            return value.json();
+        })
+        
+        .then(function(v)
+        {
+            v.map((value)=> {
+
+                if(!map.has(value.postId))
+                {
+                    map.set(value.postId,[value.email])
+                }
+                else
+                {
+                    let a = map.get(value.postId);
+
+                    a.push(value.email)
+                    map.set(value.postId,a)
+                }
+
+                
+            })
+
+            console.log(map);
+        
+        });
+
+
+ 
+        
+    </script>
+</body>
+</html>

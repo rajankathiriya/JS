@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablejavascript</title>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+        tr:hover {background-color: #2e6e6b;color: aliceblue;}
+
+        img {
+            width: 80px;
+            margin: 10px;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <table id="tableid"></table>
+    <script>
+        const mydata = [{
+                "id": 1,
+                "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+                "price": 109.95,
+                "description": "Your perfect pack for everyday use and walks in the forest. Stash your laptop in the padded sleeve.",
+                "category": "men's bag",
+                   "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS23sg29fe6W81r1Hvn4onQVhkXnyrk70uUZY30H5HMTcn5-8DVYWQ8QTdlQbP5voQiSOw&usqp=CAU",
+                
+                
+            },
+            {
+                "id": 2,
+                "title": "Mens Casual Premium Slim Fit T-Shirts ",
+                "price": 22.3,
+                "description": "Slim-fitting style, contrast raglan long sleeve, three-button henley placket, soft fabric for breathable and comfortable wearing. ",
+                "category": "men's clothing",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3bFcesyuSnwsrPX-FQb0I60Pl4BrYBnvhCw&usqp=CAU",
+                
+            },
+            {
+                "id": 3,
+                "title": "Mens Cotton Jacket",
+                "price": 55.99,
+                "description": "great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, camping, traveling or other outdoors. ",
+                "category": "men's clothing",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpgMb6xRRVKmnV4rwMTL6_0b_wFR_JgQerYQ&usqp=CAU",
+                
+            },
+            {
+                "id": 4,
+                "title": "Mens Casual Slim Fit",
+                "price": 15.99,
+                "description": "The color could be slightly different between on the screen and in practice. ",
+                "category": "men's clothing",
+                "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU41xjPcC8ptATLTVCUPzZ8zENHjEasWNSuCfqOyF-nGizgri3CB9nNk84WVukfHC2YNg&usqp=CAU",
+                
+            }
+
+        ];
+        let myarraytable = mydata.map(function (value) {
+            return `<tr><td>${value.id}</td><td>${value.title}</td><td>${value.price}</td><td><img src='${value.image}' /></td><td>${value.description}</td><td>${value.category}</td></tr>`
+        })
+        document.getElementById("tableid").innerHTML = myarraytable.join("");
+    </script>
+</body>
+
+</html>

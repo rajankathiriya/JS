@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th,
+    td {
+        text-align: left;
+        padding: 8px;
+    }
+    tr:nth-child(even) {
+        background-color: #c7c077;
+    }
+    tr:hover {
+        background-color: #3e390c;
+       color: rgb(219, 211, 211);
+    }
+    img {
+        width: 80px;
+        margin: 10px;
+    }
+</style>
+
+<body>
+    <table id="tableurl"></table>
+    <script>
+         fetch("https://fakestoreapi.com/products")
+        .then(function(value)
+        {
+            return value.json()
+        })
+        .then(function(value){
+             let mydata = value.map(function(value){
+                return `<tr><td>${value.id}</td><td>${value.title}<td>${value.price}</td></td><td>${value.description}</td><td>${value.category}</td><td><img src='${value.image}'></td><td></td></tr>`
+             })
+             document.getElementById("tableurl").innerHTML = mydata.join(" ");
+        })
+    </script>
+</body>
+
+</html>

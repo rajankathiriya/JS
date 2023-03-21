@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>someevery</title>
+</head>
+<body>
+    <script>
+         let mystudents = [ 
+                {
+                    name : "jay",
+                    percentage : 35,
+    
+                },
+                {
+                    name : "darshit",
+                    percentage : 45,
+    
+                },
+                {
+                    name : "milan",
+                    percentage :60,
+    
+                },
+                {
+                    name : "ravi",
+                    percentage : 80,
+    
+                }
+             ];
+
+             let my =mystudents.every(function(value){
+                return value.percentage>=35;
+             });
+               if (my == true){
+                 console.log("all result in good")
+               }
+              else 
+              {
+                console.lod("all result not good.")
+              }
+             
+                console.log(mystudents);
+             
+    </script>
+</body>
+</html>

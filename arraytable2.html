@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>table</title>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+        tr:hover {background-color: #39aaa4;}
+
+        img {
+            width: 80px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table id="tableid"></table>
+    <script>
+        const myalbum = [{
+                "albumId": 1,
+                "id": 1,
+                "title": "accusamus beatae ad facilis cum similique qui sunt",
+                "url": "/tab1.jpeg",
+                "thumbnailUrl": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.freepik.com%2Fvectors%2Fbackground&psig=AOvVaw0i_tkwM9HDYBEdh_LgiCs-&ust=1672815735591000&source=images&cd=vfe&ved=0CA8QjRxqFwoTCJC60a_qqvwCFQAAAAAdAAAAABAE"
+            },
+            {
+                "albumId": 1,
+                "id": 2,
+                "title": "reprehenderit est deserunt velit ipsam",
+                "url": "/tab4.jpeg",
+                "thumbnailUrl":""
+            },
+            {
+                "albumId": 1,
+                "id": 3,
+                "title": "officia porro iure quia iusto qui ipsa ut modi",
+                "url": "/tab2.jpeg",
+                "thumbnailUrl": ""
+            },
+            {
+                "albumId": 1,
+                "id": 4,
+                "title": "culpa odio esse rerum omnis laboriosam voluptate repudiandae",
+                "url": "/tab5.jpeg",
+                "thumbnailUrl": ""
+            },
+        ];
+        let myarraytable = myalbum.map(function (value) {
+            return `<tr><td>${value.albumId}</td><td>${value.id}</td><td>${value.title}</td><td><img src='${value .url}' /></td><td><href ='${value.thumbnailUrl}'</td></tr>`
+        })
+        document.getElementById("tableid").innerHTML = myarraytable.join("");
+    </script>
+</body>
+
+</html>

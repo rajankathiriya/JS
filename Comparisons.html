@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> javascript Comparisons</title>
+</head>
+
+<body>
+    <h2>JavaScript Comparisons</h2>
+    <p>Input your age and click the button:</p>
+    <input id="age" value="18" />
+    <input id="age1" value="18" />
+    <button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+    <script>
+        function myFunction() {
+            alert("ddd");
+            let voteable;
+            let age = Number(document.getElementById("age").value);
+            let age1 = Number(document.getElementById("age1").value);
+            alert("Sdsad")
+            if (age == age1) {
+                document.getElementById("demo").innerHTML = "it is sanme";
+            } else {
+                document.getElementById("demo").innerHTML = "it is not same";
+            }
+        }
+    </script>
+</body>
+</html>

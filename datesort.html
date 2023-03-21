@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale">
+    <title>date sort function</title>
+</head>
+
+<body>
+    <script>
+        let mydata = [
+            {
+                Id: 1,
+                JD: "22-02-2022"
+            },
+            {
+                Id: 2,
+                JD: "10-12-1990"
+            },
+            {
+                Id: 3,
+                JD: "23-10-1999"
+            },
+            {
+                Id: 4,
+                JD: "06-03-2015"
+            },
+            {
+                Id: 5,
+                JD: "30-05-1980"
+            },
+        ]
+        mydata.sort(function(a,b){
+            if(a.jd>b.jd){
+                return ;
+            }
+            else{
+                return ;
+            }
+        }).reverse();
+        console.log(mydata);
+    
+
+    </script>
+</body>
+
+</html>

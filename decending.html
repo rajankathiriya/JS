@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>decending</title>
+</head>
+
+<body>
+    <script>
+        let mydata = [{
+                id: 1,
+                firstname: "mansi",
+                lastname: "senjaliya",
+
+            },
+            {
+                id: 3,
+                firstname: "manu",
+                lastname: "patel",
+            },
+            {
+                id: 2,
+                firstname: "jensi",
+                lastname: "sojitra",
+            },
+        ];
+
+        //  mydata.sort().reverse();
+
+        mydata.sort(function (A, B) {
+            if (A.id > B.id) {
+                return 1;
+            } else {
+                return -1;
+            }
+        }).reverse();
+        console.log(mydata);
+        // let myArray = ['vadodara', 'pune', 'ahemedabad', 'anand', 'vvnagar'];
+
+        // myArray.sort().reverse();
+
+
+        // let numbers = [1, 2, 11, 3, 111, 344, 222, 555, 222, 22];
+
+
+
+        // numbers.sort(function (a, b) {
+        //     if (a > b) {
+        //         return 1;
+        //     } else {
+        //         return -1;
+        //     }
+
+
+        // });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="mydata">
+    <button onclick="mysaveitem();">save</button>
+    <div id="myarratdata"></div>
+    <!-- <script>
+       
+            let myarray = ["surat","baroda","surat","pune","valsad","junagdh"];
+            let myresult = myarray.reduce(function(a,b){
+                if(!a.includes(b))
+                {
+                    a.push(b)
+                }
+                return a;
+            },[]);
+        
+       console.log(myresult); -->
+
+       <script>
+        let myitems = [];
+        function mysaveitem(){
+            let data = document.getElementById("mydata").value;
+            myitems.push(data);
+            myarratdata();
+        }
+
+        function myarratdata() {
+            let data2 = myitems.map(function(value)
+            {
+                return(`<li>${value}</li>`)
+            }).join(" ");
+            document.getElementById("myarratdata").innerHTML = data2;            
+        }
+    </script>
+</body>
+</html>

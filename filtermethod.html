@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input type="text" value=""  id="searchTerm"/>
+    <div id="result"></div>
+    <input type="button" value="save" onclick="searchResult()"/> -->
+    <div id="result"></div>
+    <input type="button" value="show" onclick="myfun()"></input>
+    <script>
+        function myfun() {
+            let myarray = ["A Better India: A Better World", " Passage to India", "A Revenue Stamp", "The Guide",
+                "Midnight’s Children"
+            ];
+            let myfunction = myarray.map(function (value) {
+                return `<li>${value}</li>`;
+            })
+            document.getElementById("result").innerHTML = myfunction.join("  ");
+        }
+        // let myData = ["vadodara", "pune", "mumbai", "bangloor", "gurugram", "vadodara", "vadodara"];
+
+        // function searchResult() {
+        //     let mySearchTerm = document.getElementById("searchTerm").value;
+        //     let myResult = myData.filter(function (value) {
+
+        //         return value == mySearchTerm;
+
+        //     });
+
+        //     let myarray = myResult.map(function (value) {
+
+        //         return `<div>${value}</div>`
+        //     })
+        //     document.getElementById("result").innerHTML = myarray.join(" ");
+
+
+
+        //     console.log(myCompoundMarks);
+
+        // }
+    </script>
+</body>
+
+</html>
