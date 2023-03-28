@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //     const myAddress = {
+    //         fullAddress : function() {
+    //             get add() {
+    //            return this.geolocation+ " " +  this.city + " " + this.street+""+this.zipcode;
+    //         }
+    //     }
+    // }
+    //     fetch("https://fakestoreapi.com/users")
+    //     .then(y=> {
+    //         return y.json();
+    //     }).then(y=> {
+    //             y.map((value)=> {
+    //                 console.log(.fullAddress.get.myAddres);
+    //             })
+    //     })
+
+    let address = {
+           address : "",
+           set all(a) {
+           this.address = a;
+ },
+          get all() {
+              return this.address.city + " " + this.address.street;            
+          }
+       }
+       fetch("https://fakestoreapi.com/users")
+       .then(res=>{
+           return res.json();
+       }).then(res=>{          
+           res.map((value)=> {
+               address.all = value.address;
+               console.log(address.all);
+           })
+         //console.log(address.all);
+       })
+    </script>
+</body>
+</html>
