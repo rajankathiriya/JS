@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addremove task</title>
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- styles -->
+  <link rel="stylesheet" href="deletadd.css" />
+</head>
+
+<body>
+  <div id="displayto" onclick="display()"></div>
+  <section class="section-center">
+    <!-- form -->
+    <form class="grocery-form">
+      <p class="alert"></p>
+      <h3>grocery items</h3>
+      <div class="form-control">
+        <input type="text" id="remove" placeholder="e.g. eggs" />
+        <button type="button" class="submit-btn" onclick="myadd()">submit</button><br>
+      </div>
+      <p id="rem"></p>
+    </form>
+    <!-- list -->
+    <div class="grocery-container">
+      <div class="grocery-list">
+        <p class="title">test</p>
+        <div class="btn-container">
+          <!-- edit btn -->
+          <button type="button" class="edit-btn" onclick="myadd()">
+            <i class="fas fa-edit"></i>
+          </button>
+          <!-- delete btn -->
+          <button type="button" class="delete-btn" onclick="myremove()">
+            <i class="fas fa-trash"></i>
+          </button>
+        </div>
+      </div>
+      <button class="clear-btn" onclick="myclear()">clear items</button>
+    </div>
+  </section>
+  <!-- <p id="remove"></p> -->
+  <!-- javascript -->
+  <script>
+    let myitems = ["milk", "Grains", " Bread", "Oil", "Eggs", "suger", "Snacks", "Vegetables", "rice", "milk powder",
+      " dried beans", "salt"];
+
+    function myremove() {
+      let a = document.getElementById("remove").value;
+      let b = myitems.indexOf(a);
+
+      myitems.splice(b, 1);
+      document.getElementById("rem").innerHTML = myitems;
+    }
+
+    function myadd() {
+      let a = document.getElementById("remove").value;
+       //let b = mydata.indexOf(a);
+
+      myitems.push(a);
+      document.getElementById("rem").innerHTML = myitems;
+      display("add success...");
+    }
+
+    function myclear() {
+      let a = document.getElementById("remove").value;
+      myitems.splice(0, myitems.length);
+      document.getElementById("rem").innerHTML = myitems;
+    }
+    function display (meassge){
+      document.getElementById("displayto").innerHTML=
+      `<div class="alert alert-success alert-dismissible">
+    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    <strong>Success!</strong></div>${meassge}`;
+
+    }
+  </script>
+
+</body>
+
+</html>

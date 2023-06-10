@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="d1"></div>
+    <div id="d2"></div>
+   <script>
+loadDoc("https://fakestoreapi.com/products", myFunction1);
+
+loadDoc("https://fakestoreapi.com/users", myFunction2);
+
+function loadDoc(url, cFunction) {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {cFunction(this);}
+  xhttp.open("GET", url);
+  xhttp.send();
+}
+
+function myFunction1(xhttp) {
+   // console.log(JSON.parse(xhttp.responseText));
+   let x = JSON.parse(xhttp.responseText);
+    Display(x,"d1");
+}
+
+function myFunction2(xhttp) {
+   //console.log(JSON.parse(xhttp.responseText));
+    let y = JSON.parse(xhttp.responseText);
+    Display(y,"d2");
+  // action goes here
+}
+
+function Display(data,id)
+{
+    let show = data.map((info)=>{
+       let p =''
+        for(y in info)
+        {
+       p = p+`(${info[y]})`;
+        }
+        return p;
+    })
+//     let show2 = data.map((info)=>{
+
+// return`(${info.address})`;
+// })
+
+        document.getElementById(id).innerHTML = show;
+      
+    }
+
+   </script> 
+</body>
+</html>

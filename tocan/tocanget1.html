@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tocangetdata</title>
+    <style>
+        table,th,td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th,td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+        tr:hover {background-color: #39aaa4;}
+
+        img {
+            width: 80px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table id="tabledic"></table>
+    <script>
+fetch("https://real-pear-fly-kilt.cyclic.app/accounts/authenticate",{
+ headers : {
+    'Accept': 'application/json',
+   "Content-Type": 'application/json',
+   'Authorization' : "bearer "+  JSON.parse(localStorage.getItem("user")).jwtToken
+ }
+})
+.then(y=> {
+    return y.json()
+})
+.then(function(value) {
+    //console.log(y);
+    let mydata = value.map(function(value){
+                return `<tr><td>${value.id}</td><td>${value.title}</td><td>${value.firstName}</td><td><${value.lastName}</td><td><${value.email}</td><td>${value.role}</td><td>${value.created}</td></tr>`
+             })
+             document.getElementById("tabledic").innerHTML = mydata.join(" ");
+        })
+    </script>
+</body>
+</html>

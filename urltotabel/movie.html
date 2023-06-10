@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container mt-3">
+        <h2>Form</h2>
+        <div class="mb-3 mt-3">
+            <label for="publishedBy">Id:</label>
+            <input type="text" class="form-control" id="id" placeholder="Enter Id ">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="publishedBy">createdAt:</label>
+            <input type="text" class="form-control" id="createdAt" placeholder="createdAt">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="title">Name:</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter name">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="content">Avatar:</label>
+            <input type="text" class="form-control" id="Avatar" placeholder="Enter Avatar">
+        </div>
+        <br>
+        <div class="mb-3">
+            <label for="content">Title:</label>
+            <input type="text" class="form-control" id="title" placeholder="Enter image url">
+        </div>
+        <div class="mb-3">
+            <label for="content">Release Date:</label>
+            <input type="text" class="form-control" id="Releasedate" placeholder="Enter Release date">
+        </div>
+        <div class="mb-3">
+            <label for="content">Duration:</label>
+            <input type="text" class="form-control" id="Duration" placeholder="Enter Duration">
+        </div>
+        <div class="mb-3">
+            <label for="content">Rating:</label>
+            <input type="text" class="form-control" id="rating" placeholder="Enter Ratings">
+        </div>
+        <div class="mb-3">
+            <label for="content">Actors</label>
+            <input type="text" class="form-control" id="actors" placeholder="Enter Actors">
+        </div>
+        <div class="mb-3">
+            <label for="content">Genre:</label>
+            <input type="text" class="form-control" id="genre" placeholder="Enter Genre">
+        </div>
+        <div class="mb-3">
+            <label for="content">Image:</label>
+            <input type="text" class="form-control" id="image" placeholder="Enter image url">
+        </div>
+        <div class="mb-3">
+            <label for="content">Director :</label>
+            <input type="text" class="form-control" id="Director" placeholder="Enter Director">
+        </div>
+        <br>
+        <div class="form-check mb-3">
+            <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" name="remember"> Remember me
+            </label>
+        </div>
+        <br>
+        <button type="button" class="btn btn-primary" onclick="display()">Submit</button>
+    </div>
+    <script>
+        function display() {
+            let myObj = {
+                Id: document.getElementById("id").value,
+                CreatedAt: document.getElementById("createdAt").value,
+                Name: document.getElementById("name").value,
+                Avatar: document.getElementById("Avatar").value,
+                Title: document.getElementById("title").value,
+                Releasedate: document.getElementById("Releasedate").value,
+                Duration: document.getElementById("Duration").value,
+                Rating: document.getElementById("rating").value,
+                Actors: document.getElementById("actors").value,
+                Genre: document.getElementById("genre").value,
+                imageURL: document.getElementById("image").value,
+            }
+            fetch('https://6413fcaf844a8032dc1183ac.mockapi.io/api/v1/movie', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(myObj)
+                }).then(res => res.json())
+                .then(res => console.log(res));
+
+        }
+    </script>
+</body>
+
+</html>

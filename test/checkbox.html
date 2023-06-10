@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+<div class="container mt-3">
+  <h2></h2>
+  <form>
+    <div class="container">
+        <div class="form-check">
+            Full stack<input type="checkbox" class="form-check-input" id="fullstack" name="full" value="something" onchange="stack(this)"/>
+          </div><br>  
+          <div class="form-check">  
+            Frontend<input type="checkbox" class="form-check-input" id="frontend" name="frontend" value="something" /> 
+          </div>
+        <div class="form-check">
+            Html<input type="checkbox" class="form-check-input" id="html" name="frontend" value="something" />
+          </div>
+          <div class="form-check">
+            CSS<input type="checkbox" class="form-check-input" id="css" name="frontend" value="something" />
+          </div>
+          <div class="form-check">
+            Bootstrap<input type="checkbox" class="form-check-input" id="bootstrap" name="frontend" />
+          </div>
+          <div class="form-check">
+            Javascript<input type="checkbox" class="form-check-input" id="javascript" name="frontend"/>
+          </div>
+          <div class="form-check">  
+            React<input type="checkbox" class="form-check-input" id="react" name="frontend" />
+            
+          </div>
+       <br>
+       <div class="form-check">        
+        Backend<input type="checkbox" class="form-check-input" id="backend" name="backend" value="something" />
+      </div>
+            <div class="form-check">
+                Node<input type="checkbox" class="form-check-input" id="node" name="backend" value="something" />
+            
+              </div>
+              <div class="form-check">
+                Mongo<input type="checkbox" class="form-check-input" id="mongo" name="backend" value="something" />                
+              </div>
+              <div class="form-check">
+                Express<input type="checkbox" class="form-check-input" id="express" name="backend" value="something" />
+              </div>
+        </div>
+    </div>
+<script>
+    let main = document.getElementById("fullstack");
+    let checkboxes = document.querySelectorAll("input[type='checkbox']:not(#fullstack)");
+    fullstack.addEventListener("click", function() {
+  if (fullstack.checked) {
+    checkboxes.forEach(function(checkbox)
+     {
+      checkbox.checked = true;
+    });
+  } else {
+    checkboxes.forEach(function(checkbox) {
+      checkbox.checked = false;
+    });
+  }
+});
+frontendmain = document.getElementById("frontend");
+let frontendcheckboxes = document.querySelectorAll("input[name='frontend']");
+frontend.addEventListener("click",function()
+{
+    if(frontend.checked)
+    {
+        frontendcheckboxes.forEach(function(frontendbox)
+        {
+            frontendbox.checked = true;
+
+        });
+    }
+        else
+        {
+            frontendcheckboxes.forEach(function(frontendbox){
+                frontendbox.checked = false;
+
+            });
+        }
+});
+frontendcheckboxes.forEach(function(box){
+    box.addEventListener('change',function(){
+        if((!html.checked) || (!css.checked) || (!javascript.checked) || (!react.checked) )
+        {
+            //console.log("html");
+            frontend.checked = false;
+            fullstack.checked = false;
+        }
+        else
+        {
+            frontend.checked = true;
+            frontend.checked = true;
+        }
+     
+    })
+});
+let backendmain = document.getElementById("backend");
+let backendcheckboxes = document.querySelectorAll("input[name='backend']");
+backend.addEventListener("click",function()
+{
+        if(backendmain.checked)
+        {
+                backendcheckboxes.forEach(function(backendbox)
+                {
+                        backendbox.checked = true;
+                });
+
+        }
+        else
+        {
+            backendcheckboxes.forEach(function(backendbox){
+                backendbox.checked = false;
+            });
+        }
+});
+backendcheckboxes.forEach(function(box2)
+{
+       box2.addEventListener("click",function(){
+        console.log("2");
+                if((!node.checked) || (!mongo.checked) || (!express.checked))
+                {
+                    console.log("3");
+                    backend.checked = false;
+                    fullstack.checked = false;
+                }
+                else
+                {
+                    backend.checked = true;
+                    fullstack.checked = true;
+                }
+    })
+});
+backendmain.addEventListener("click",function(){
+    if(frontendmain.checked)
+    {
+        if(backendmain.checked)
+        {
+        fullstack.checked = true;
+         }
+         else
+         {
+            fullstack.checked = false; 
+         }
+}
+    elseif(!frontendmain.checked)
+    {
+        fullstack.checked = false;
+    }
+})
+frontendmain.addEventListener("click",function(){
+if(!backend.checked)
+{
+    fullstack.checked = false;
+}
+else
+{
+    fullstack.checked = false;
+}
+})
+   </script>
+</body>
+</html>

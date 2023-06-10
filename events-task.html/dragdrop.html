@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .droptarget {
+    width: 400px;
+    height: 70x px;
+    padding: 10px;
+    border: 1px solid rgb(182, 68, 68);
+    background-color: pink;
+    }
+    #btn{
+        color: rgb(53, 25, 34);
+        background-color: rgb(205, 50, 102);
+        border: 0px;
+    }
+  
+    </style>
+</head>
+<body  class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <p>Dragdrop</p>
+    <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"> 
+        <div ondragstart="dragStart(event)"  draggable="true" id="dragtarget">
+            <form name="myForm" >
+                Name: <input type="text" name="fname"><br><br>
+                city: <input type="text" name="fname"><br><br>
+                 <input type="button" value="Submit" id="btn"> 
+            </form>
+        </div>
+    </div>
+    <p id="drag"></p>
+     <div class="droptarget" ondrop="drop(event)" ondragover="allowDrop(event)"></div> 
+    <script>
+        function dragStart(event) {
+            event.dataTransfer.setData("text", event.target.id);
+        }
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+            const data = event.dataTransfer.getData("text");
+            event.target.appendChild(document.getElementById(data));
+        }
+    </script>
+</body>
+
+</html>

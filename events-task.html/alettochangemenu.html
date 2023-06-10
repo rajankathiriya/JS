@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <a href="abouts.html" >Page2</a>
+    <form>
+        <input type="text"  />
+        <input type="text"  />
+    </form>
+    <script>
+window.addEventListener('beforeunload', (event) => {
+    let d = document.getElementsByTagName("input");
+    let isEditEmpty= false;
+    for(i=0;i<d.length;i++)
+    {
+        if(d[i].value == "")
+        {
+            isEditEmpty= true;
+        }
+    }
+    if(isEditEmpty)
+    {
+  event.returnValue = `Are you sure you want to leave?`;
+    }
+});
+    </script>
+</body>
+</html>
+
+  <!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body onbeforeunload="return myFunction()">
+    <div class="container mt-3">
+     <input type="button" class="btn btn-primary" value="about" onclick="nextpage()"></input>
+        <a href="abouts.html">About </a>
+        <h2> form</h2>
+        <form name="formsave">
+            <form name="formsave"></form>
+            <div class="mb-3 mt-3">
+                <label for="name">Name:</label>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" name="name">
+            </div>
+            <div class="mb-3">
+                <label for="pwd">Password:</label>
+                <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
+            </div>
+            <div class="mb-3">
+                <label for="pwd">Address:</label>
+                <input type="text" class="form-control" id="add" placeholder="Enter address" name="add">
+            </div>
+            <input type="hidden" id="index" value="-1" />
+         
+        </form>
+    </div>
+    <div id="display"></div>
+    <script>
+        function myFunction() {
+            let name = document.getElementById("name").value;
+            let password = document.getElementById("pwd").value;
+            let Address = document.getElementById("add").value;
+
+            if (name != '' && password != '' && Address != '') {
+                alert("You are about to print this document!");
+                window.location.href = 'abouts.html';
+            } else {
+            }
+        }
+       
+    </script>
+</body>
+
+</html>   -->

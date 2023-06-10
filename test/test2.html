@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test 2</title>
+</head>
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+<script>
+    const inputString = "This is the javascript 012";
+    let charCount = 0;
+    let numCount = 0;
+
+    for (let i = 0; i < inputString.length; i++) {
+        const char = inputString.charAt(i);
+        if (/[a-zA-Z]/.test(char)) {
+            charCount++;
+        } else if (/[0-9]/.test(char)) {
+            numCount++;
+        }
+    }
+    document.getElementById("demo1").innerHTML = "Number of characters:"+charCount;
+    document.getElementById("demo2").innerHTML = "Number of numbers:"+numCount;
+    // console.log("Number of characters:", charCount);
+    // console.log("Number of numbers:", numCount);
+</script>
+</body>
+
+</html>
